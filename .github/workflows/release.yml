@@ -46,6 +46,11 @@ jobs:
           git add package.json package-lock.json
           git commit -m "chore: release ${{ steps.get_version.outputs.version }}"
           git push
+      
+      - name: Build package (ESM + UMD)
+        run: |
+          npm run build
+          npm run build:umd
 
       - name: Publish with provenance and signature
         run: npm publish --access public --provenance --sign

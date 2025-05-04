@@ -1,4 +1,4 @@
-import { stableHash } from './hash'
+import { stableHash } from './hash.js'
 import type { FlagSet, FlagContext } from './types.ts'
 
 export class TinyFlags {

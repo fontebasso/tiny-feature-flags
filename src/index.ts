@@ -1,4 +1,4 @@
-export { TinyFlags } from './core/tiny-flags'
+export { TinyFlags } from './core/tiny-flags.js'
 export type {
   FlagContext,
   FlagDefinition,

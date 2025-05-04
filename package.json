@@ -10,6 +10,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "build:umd": "node build.umd.mjs",
     "build:watch": "tsc --watch",
     "demo": "npx tsx examples/basic-eval.ts",
     "dev:test": "vitest",
@@ -45,6 +46,7 @@
     "url": "https://github.com/fontebasso/tiny-feature-flags/issues"
   },
   "homepage": "https://github.com/fontebasso/tiny-feature-flags#readme",
+  "unpkg": "dist/tiny-feature-flags.umd.js",
   "keywords": [
     "feature-flags",
     "edge",
@@ -57,6 +59,7 @@
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",
     "@vitest/coverage-v8": "^3.1.2",
+    "esbuild": "^0.25.3",
     "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-import-resolver-typescript": "^4.3.4",

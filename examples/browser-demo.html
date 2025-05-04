@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>tiny-feature-flags - Browser Demo</title>
+</head>
+<body>
+  <h1>tiny-feature-flags - Browser Demo</h1>
+
+  <pre id="output">Loading...</pre>
+
+  <!-- Substitua pelo caminho correto do seu bundle UMD -->
+  <script src="../dist/tiny-feature-flags.umd.js"></script>
+  <script>
+    window.TinyFlags = TinyFlags.TinyFlags;
+
+    const flagsUrl = 'https://gist.githubusercontent.com/fontebasso/d94c363a6c08c817521c34a24f7eca91/raw/950f61d8d4d8265ec58c65cfdc9ccdf6b33d7ec0/flags.json'
+
+    TinyFlags.load(flagsUrl, {
+      userId: 'user-123',
+      traits: { region: 'us', plan: 'pro' }
+    })
+    .then(flags => {
+      const result = {
+        newSidebar: flags.enabled('newSidebar'),
+        v3Checkout: flags.enabled('v3Checkout'),
+      }
+
+      document.getElementById('output').textContent = JSON.stringify(result, null, 2)
+    })
+    .catch(err => {
+      document.getElementById('output').textContent = 'Error: ' + err.message
+    })
+  </script>
+</body>
+</html>

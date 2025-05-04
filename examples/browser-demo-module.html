@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>tiny-feature-flags – Module Demo</title>
+</head>
+<body>
+  <h1>tiny-feature-flags (module) demo</h1>
+  <pre id="output">Loading...</pre>
+
+  <script type="module">
+    import { TinyFlags } from '/dist/index.js'
+
+    const url = 'https://gist.githubusercontent.com/fontebasso/d94c363a6c08c817521c34a24f7eca91/raw/950f61d8d4d8265ec58c65cfdc9ccdf6b33d7ec0/flags.json'
+
+    const flags = await TinyFlags.load(url, {
+      userId: 'demo-user',
+      traits: { plan: 'pro', region: 'br' }
+    })
+
+    document.getElementById('output').textContent = JSON.stringify({
+      newSidebar: flags.enabled('newSidebar'),
+      v3Checkout: flags.enabled('v3Checkout')
+    }, null, 2)
+  </script>
+</body>
+</html>
