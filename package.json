@@ -1,7 +1,7 @@
 {
   "name": "tiny-feature-flags",
   "description": "A tiny, deterministic feature flag SDK for edge, browser and serverless environments.",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": false,
   "type": "module",
   "main": "dist/index.js",
@@ -60,7 +60,7 @@
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",
     "@vitest/coverage-v8": "^3.1.2",
-    "esbuild": "^0.25.3",
+    "esbuild": "^0.25.4",
     "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-import-resolver-typescript": "^4.3.4",
