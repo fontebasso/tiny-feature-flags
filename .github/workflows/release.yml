@@ -45,7 +45,7 @@ jobs:
           git config user.email "github-actions@github.com"
           git add package.json package-lock.json
           git commit -m "chore: release ${{ steps.get_version.outputs.version }}"
-          git push
+          git push origin HEAD:main
       
       - name: Build package (ESM + UMD)
         run: |
