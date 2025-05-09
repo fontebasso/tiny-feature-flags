@@ -1,7 +1,7 @@
 {
   "name": "tiny-feature-flags",
   "description": "A tiny, deterministic feature flag SDK for edge, browser and serverless environments.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": false,
   "type": "module",
   "main": "dist/index.js",
